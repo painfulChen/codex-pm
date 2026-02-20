@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Codex 项目管理工具 · 定价</title>
+    <style>
+      :root {
+        --bg: #f4f5f7;
+        --card: #fff;
+        --line: #dfe1e6;
+        --text: #091e42;
+        --muted: #5e6c84;
+        --brand: #0747a6;
+        --good: #006644;
+      }
+      html, body { height: 100%; }
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        color: var(--text);
+        background: radial-gradient(900px 380px at 18% 0%, #e9f2ff 0%, rgba(233,242,255,0) 70%),
+          radial-gradient(820px 340px at 88% 10%, #fff1e6 0%, rgba(255,241,230,0) 66%),
+          var(--bg);
+      }
+      .wrap { max-width: 980px; margin: 0 auto; padding: 30px 16px 60px; }
+      .top { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+      h1 { margin: 0; font-size: 26px; letter-spacing: -0.02em; }
+      .sub { color: var(--muted); margin: 8px 0 0; }
+      a { color: var(--brand); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      .grid { margin-top: 18px; display: grid; gap: 12px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 14px;
+        box-shadow: 0 10px 30px rgba(9,30,66,0.08);
+        display: grid;
+        gap: 10px;
+      }
+      .plan { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+      .tag { font-size: 12px; font-weight: 700; color: var(--good); border: 1px solid rgba(0,102,68,0.25); background: #e3fcef; padding: 2px 8px; border-radius: 999px; }
+      .price { font-size: 22px; font-weight: 800; letter-spacing: -0.02em; }
+      ul { margin: 0; padding-left: 18px; color: var(--text); }
+      li { margin: 6px 0; }
+      .muted { color: var(--muted); font-size: 13px; line-height: 1.45; }
+      .cta {
+        margin-top: 16px;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        border: 1px solid #c1c7d0;
+        padding: 10px 12px;
+        font-size: 13px;
+        font-weight: 700;
+        background: #fff;
+        color: var(--text);
+      }
+      .btn.primary { background: #deebff; border-color: #b3d4ff; color: #0747a6; }
+      .foot { margin-top: 14px; color: var(--muted); font-size: 12px; line-height: 1.45; }
+      @media (max-width: 900px) {
+        .grid { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="top">
+        <div>
+          <h1>Codex 项目管理工具 · 定价</h1>
+          <div class="sub">本地优先的 Codex 多终端看板协作工具，面向个人开发者起步。</div>
+        </div>
+        <a class="muted" href="/live-view.html">返回看板</a>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <div class="plan">
+            <strong>Free</strong>
+            <span class="tag">本地</span>
+          </div>
+          <div class="price">$0</div>
+          <ul>
+            <li>任务看板（拖拽 + 状态机）</li>
+            <li>多项目任务与文档联动</li>
+            <li>本地版本日志与架构同步</li>
+          </ul>
+          <div class="muted">适合自用与验证工作流。</div>
+        </div>
+
+        <div class="card">
+          <div class="plan">
+            <strong>Pro</strong>
+            <span class="tag">订阅</span>
+          </div>
+          <div class="price">$9/mo</div>
+          <ul>
+            <li>看板治理增强（审计/遥测可选）</li>
+            <li>交付物自动化（PR描述/日志/文档）</li>
+            <li>License Key 激活（MVP）</li>
+          </ul>
+          <div class="muted">当前为 MVP：本地存储 + 可选离线验签。</div>
+        </div>
+
+        <div class="card">
+          <div class="plan">
+            <strong>Team</strong>
+            <span class="tag">规划中</span>
+          </div>
+          <div class="price">TBD</div>
+          <ul>
+            <li>云同步（可选）</li>
+            <li>多设备/多机器协作</li>
+            <li>团队权限与审计</li>
+          </ul>
+          <div class="muted">后续根据个人版验证结果逐步演进。</div>
+        </div>
+      </div>
+
+      <div class="cta">
+        <a class="btn primary" href="/live-view.html#settings">去设置里粘贴 License</a>
+        <a class="btn" href="/subscription/README.md" target="_blank" rel="noreferrer">License 生成说明</a>
+        <a class="btn" href="/subscription/payments.md" target="_blank" rel="noreferrer">支付闭环草案</a>
+      </div>
+
+      <div class="foot">
+        说明：该页面用于本地 MVP 交互展示。当前已落地 License Key（本地存储 + 可选离线验签）与“云端激活 mock”，并提供 Stripe Webhook 骨架供后续接入。
+      </div>
+    </div>
+  </body>
+</html>
