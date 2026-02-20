@@ -126,7 +126,11 @@ test("按最近时间降序 + 收藏置顶 + 刷新后保留选择", async ({ pa
   );
   expect(after[0]).toBe("gamma");
 
-  await page.evaluate(() => localStorage.setItem("pm_selected_project", "beta"));
+  await page.evaluate(() => {
+    localStorage.setItem("pm_selected_project", "beta");
+    // URL project query has higher priority than localStorage; clear it to verify local restore path.
+    history.replaceState(null, "", "/pm");
+  });
   await page.reload();
   await expect(page.locator("#projectFilter")).toHaveValue("beta");
 });
